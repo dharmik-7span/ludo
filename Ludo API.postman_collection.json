@@ -1,0 +1,175 @@
+{
+  "info": {
+    "_postman_id": "613c7275-375b-435a-95eb-3799cc2fa5e3",
+    "name": "Ludo API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40363891"
+  },
+  "item": [
+    {
+      "name": "Create Game",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"total_players\": 4,\n    \"player_names\": [\"Ram\", \"Lakhan\", \"Bharat\"]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api.php?action=create_game",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api.php"
+          ],
+          "query": [
+            {
+              "key": "action",
+              "value": "create_game"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Game",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"game_id\" : 12\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api.php?action=get_game",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api.php"
+          ],
+          "query": [
+            {
+              "key": "action",
+              "value": "get_game"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Roll Dice",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"game_id\": 10,\n    \"player_number\": 1\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api.php?action=roll_dice",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api.php"
+          ],
+          "query": [
+            {
+              "key": "action",
+              "value": "roll_dice"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Move Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"game_id\": 10,\n    \"player_number\": 3,\n    \"token_number\" : 1,\n    \"dice_value\": 2\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api.php?action=move_token",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api.php"
+          ],
+          "query": [
+            {
+              "key": "action",
+              "value": "move_token"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "End Points",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
